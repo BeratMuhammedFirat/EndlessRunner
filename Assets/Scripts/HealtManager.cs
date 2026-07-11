@@ -8,12 +8,13 @@ public class HealtManager : MonoBehaviour
    
     public Image[] hearts;
     private MeshRenderer meshRenderer;
-    private BoxCollider collider;
+    public GameManager gameManager;
     public int health = 3;
     void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
-        collider = GetComponent<BoxCollider>();
+        
+        
     }
 
     public void TakeDamage()
@@ -24,6 +25,10 @@ public class HealtManager : MonoBehaviour
         {
             hearts[health].enabled = false;
             StartCoroutine(Blink());
+        }
+        if (health <= 0)
+        {
+           gameManager.GameOver();
         }
     }
 
