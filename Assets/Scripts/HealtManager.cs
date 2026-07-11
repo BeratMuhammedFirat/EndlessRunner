@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,10 +7,13 @@ public class HealtManager : MonoBehaviour
  
    
     public Image[] hearts;
+    private MeshRenderer meshRenderer;
+    private BoxCollider collider;
     public int health = 3;
     void Start()
     {
-        Debug.Log(hearts.Length);
+        meshRenderer = GetComponent<MeshRenderer>();
+        collider = GetComponent<BoxCollider>();
     }
 
     public void TakeDamage()
@@ -19,14 +23,26 @@ public class HealtManager : MonoBehaviour
         if(health <= 2)
         {
             hearts[health].enabled = false;
+            StartCoroutine(Blink());
         }
     }
 
-    public void PuanAl()
+    IEnumerator Blink()
     {
-        Debug.Log("Puan arttı");
+        for (int i = 0; i < 3; i++)
+        {
+            meshRenderer.enabled = false;
 
+            yield return new WaitForSeconds(0.1f);
+
+            meshRenderer.enabled = true;
+
+            yield return new WaitForSeconds(0.1f);
+            
+        }
+      
     }
-   
-    
+
+
+
 }
