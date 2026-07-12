@@ -21,12 +21,12 @@ public class HealtManager : MonoBehaviour
     {
         health--;
 
-        if(health <= 2)
+        if(health >0)
         {
             hearts[health].enabled = false;
             StartCoroutine(Blink());
         }
-        if (health <= 0)
+        else if (health <= 0)
         {
            gameManager.GameOver();
         }
