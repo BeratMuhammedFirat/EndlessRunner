@@ -1,338 +1,101 @@
-\# Endless Runner
+# 🏃 Endless Runner
 
+Unity ve C# kullanılarak geliştirilen 3 boyutlu Endless Runner oyunu.
 
+---
 
-\## Proje Hakkında
+# 📑 İçindekiler
 
+- [Proje Hakkında](#-proje-hakkında)
+- [Özellikler](#-özellikler)
+- [Proje Mimarisi](#-proje-mimarisi)
+- [Kullanılan Teknolojiler](#-kullanılan-teknolojiler)
+- [Tasarım Yaklaşımı](#-tasarım-yaklaşımı)
+- [Kurulum](#-kurulum)
+- [Kontroller](#-kontroller)
 
+---
 
-Endless Runner, Unity oyun motoru ve C# programlama dili kullanılarak geliştirilen 3 boyutlu bir koşu oyunudur. Oyuncu sürekli ileri hareket ederken üç şerit arasında geçiş yapabilir, zıplayabilir ve eğilebilir. Yol üzerindeki coinleri toplayarak skorunu artırırken engellerden kaçınmaya çalışır. Oyuncunun canı tükendiğinde veya oyun sonu bölgesine ulaştığında oyun sona erer ve Game Over ekranı gösterilir.
+# 📖 Proje Hakkında
 
+Oyuncu sürekli ileri hareket ederken üç şerit arasında geçiş yapabilir, zıplayabilir ve eğilebilir. Yol üzerindeki coinleri toplayarak skorunu artırır, engellere çarptığında can kaybeder ve canı bittiğinde oyun sona erer.
 
+---
 
-\---
+# ✨ Özellikler
 
+- ✅ 3 şeritli hareket
+- ✅ Sürekli ileri hareket
+- ✅ Zıplama
+- ✅ Eğilme (Slide)
+- ✅ Coin toplama
+- ✅ Skor sistemi
+- ✅ Can sistemi
+- ✅ Hasar alma efekti
+- ✅ Kamera takip sistemi
+- ✅ Game Over ekranı
+- ✅ Restart sistemi
 
+---
 
-\## Özellikler
+# 🏗️ Proje Mimarisi
 
+| Script | Görevi |
+|---------|--------|
+| PlayerController | Karakter hareketlerini yönetir. |
+| CameraController | Kameranın oyuncuyu takip etmesini sağlar. |
+| ScoreManager | Skor bilgisini yönetir. |
+| CoinManager | Coin toplama işlemlerini gerçekleştirir. |
+| HealthManager | Can sistemini yönetir. |
+| EngelController | Çarpışmaları kontrol eder. |
+| RotateController | Coinlerin dönmesini sağlar. |
+| GameManager | Game Over ve Restart işlemlerini yönetir. |
+| TriggerController | Oyun sonu tetikleyicisini kontrol eder. |
 
+---
 
-\- 3 şeritli karakter hareketi
+# 🛠️ Kullanılan Teknolojiler
 
-\- Sürekli ileri hareket
+| Teknoloji | Açıklama |
+|-----------|----------|
+| Unity 6 | Oyun Motoru |
+| C# | Programlama Dili |
+| TextMesh Pro | Arayüz Metinleri |
+| Unity UI | Kullanıcı Arayüzü |
+| Git | Sürüm Kontrol |
+| GitHub | Proje Yönetimi |
 
-\- Zıplama
+---
 
-\- Eğilme (Slide)
+# 📐 Tasarım Yaklaşımı
 
-\- Coin toplama sistemi
+Bu projede belirli bir Design Pattern kullanılmamıştır.
 
-\- Skor sistemi
+Oyun, Unity'nin **Component-Based Architecture** yapısına uygun olarak geliştirilmiştir.
 
-\- Can sistemi
+---
 
-\- Hasar alma sistemi
-
-\- Hasar alındığında görsel geri bildirim (Blink)
-
-\- Dönen coin animasyonu
-
-\- Kamera takip sistemi
-
-\- Game Over ekranı
-
-\- Oyunu yeniden başlatma (Restart)
-
-
-
-\---
-
-
-
-\# Proje Mimarisi
-
-
-
-Proje, Unity'nin Component-Based Architecture (Bileşen Tabanlı Mimari) yaklaşımı kullanılarak geliştirilmiştir. Her oyun mekaniği ayrı bir MonoBehaviour scripti içerisinde yönetilmektedir.
-
-
-
-\## Scriptler
-
-
-
-\### PlayerController
-
-Oyuncu karakterinin temel hareketlerini yönetir.
-
-
-
-\- Sürekli ileri hareket
-
-\- Şerit değiştirme
-
-\- Zıplama
-
-\- Eğilme (Slide)
-
-
-
-\---
-
-
-
-\### CameraController
-
-
-
-Kameranın oyuncuyu takip etmesini sağlar.
-
-
-
-\- Oyuncuya belirlenen mesafeyi korur.
-
-\- Kameranın yalnızca gerekli eksenlerde hareket etmesini sağlar.
-
-
-
-\---
-
-
-
-\### ScoreManager
-
-
-
-Oyuncunun skor bilgisini yönetir.
-
-
-
-\- Coin toplandığında skoru artırır.
-
-\- Güncel skoru kullanıcı arayüzünde gösterir.
-
-
-
-\---
-
-
-
-\### CoinManager
-
-
-
-Coin ile oyuncu arasındaki etkileşimi yönetir.
-
-
-
-\- Coin toplama
-
-\- ScoreManager'ı tetikleme
-
-\- Toplanan coin'i sahneden kaldırma
-
-
-
-\---
-
-
-
-\### HealthManager
-
-
-
-Oyuncunun can sistemini yönetir.
-
-
-
-\- Hasar alma
-
-\- Kalp göstergelerini güncelleme
-
-\- Hasar sonrası görsel geri bildirim (Blink)
-
-\- Can bittiğinde Game Over sistemini çalıştırma
-
-
-
-\---
-
-
-
-\### EngelController
-
-
-
-Oyuncunun engeller ile çarpışmasını kontrol eder.
-
-
-
-\- Çarpışma algılama
-
-\- Oyuncunun hasar almasını sağlama
-
-
-
-\---
-
-
-
-\### RotateController
-
-
-
-Sahnedeki nesnelerin sürekli dönmesini sağlar.
-
-
-
-\- Coin döndürme
-
-\- Döndürülmesi gereken diğer objeleri hareket ettirme
-
-
-
-\---
-
-
-
-\### GameManager
-
-
-
-Oyunun genel akışını yönetir.
-
-
-
-\- Game Over ekranını açma
-
-\- Oyunu durdurma
-
-\- Oyunu yeniden başlatma
-
-
-
-\---
-
-
-
-\### TriggerController
-
-
-
-Oyun sonu tetikleyicisini kontrol eder.
-
-
-
-\- Oyuncu tetikleyiciye ulaştığında Game Over ekranını açar.
-
-
-
-\---
-
-
-
-\# Kullanılan Teknolojiler
-
-
-
-\- Unity 6
-
-\- C#
-
-\- Unity UI
-
-\- TextMesh Pro
-
-\- Unity Physics
-
-\- Git
-
-\- GitHub
-
-
-
-\---
-
-
-
-\# Tasarım Yaklaşımı
-
-
-
-Bu projede belirli bir Design Pattern uygulanmamıştır.
-
-
-
-Proje, Unity'nin Component-Based Architecture yaklaşımına uygun olarak geliştirilmiştir. Oyun mekanikleri birbirinden bağımsız MonoBehaviour scriptleri içerisinde yönetilmektedir.
-
-
-
-\---
-
-
-
-\# Projeyi Çalıştırma
-
-
-
-1\. Depoyu klonlayın.
-
-
+# 🚀 Kurulum
 
 ```bash
-
 git clone https://github.com/BeratMuhammedFirat/EndlessRunner.git
-
 ```
 
+Unity Hub üzerinden projeyi açın ve Play tuşuna basarak çalıştırın.
 
+---
 
-2\. Unity Hub üzerinden projeyi açın.
-
-
-
-3\. Gerekli paketlerin yüklenmesini bekleyin.
-
-
-
-4\. Proje sahnesini açın.
-
-
-
-5\. Play butonuna basarak oyunu çalıştırın.
-
-
-
-\---
-
-
-
-\# Kontroller
-
-
+# 🎮 Kontroller
 
 | Tuş | İşlev |
+|------|-------|
+| A | Sol şerit |
+| D | Sağ şerit |
+| Space | Zıplama |
+| S | Eğilme |
 
-|------|--------|
+---
 
-| A | Sol şeride geç |
+# 👨‍💻 Geliştirici
 
-| D | Sağ şeride geç |
-
-| Space | Zıpla |
-
-| S | Eğil (Slide) |
-
-
-
-\---
-
-
-
-\# Geliştirici
-
-
-
-\*\*Berat Muhammed Fırat\*\*
-
+**Berat Muhammed Fırat**
