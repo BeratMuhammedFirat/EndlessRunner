@@ -46,9 +46,12 @@ public class PlayerController : MonoBehaviour
         }
 
         // Karakteri bulunduğu şeride yerleştir
-        Vector3 pos = transform.position;
-        pos.x = lanes[currentLane];
-        transform.position = pos;
+        Vector3 targetPosition = transform.position;
+        targetPosition.x = lanes[currentLane];
+
+        transform.position = Vector3.Lerp(transform.position,targetPosition,10f * Time.deltaTime);
+
+
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded )
         {
