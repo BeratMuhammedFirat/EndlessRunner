@@ -6,7 +6,7 @@ public class TriggerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(manager.MoveTile());
+        manager.MoveTile();
         
     } 
 }
