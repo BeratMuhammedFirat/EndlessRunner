@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isGrounded = false;
         }
-        if (transform.position.y <= 70.56f)
+        if (transform.position.y <= 70.54f)
         {
             isGrounded = true;
         }
@@ -66,8 +66,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S) && !isSliding)
         {
             StartCoroutine(Slide());
-        }
-
+        }       
     }
     IEnumerator Slide()
     {
@@ -86,6 +85,4 @@ public class PlayerController : MonoBehaviour
 
         isSliding = false;
     }
-
-
 }

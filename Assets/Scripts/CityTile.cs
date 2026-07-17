@@ -46,7 +46,7 @@
                     if (randomObstacle == 1)
                     {
                         rotation = Quaternion.Euler(180, 90, 0);
-                        position.y += 4.8f;
+                        position.y += 2.4f;
                     }
 
                     GameObject obstacle = Instantiate(

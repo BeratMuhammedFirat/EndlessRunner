@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
+    public PlayerController playerController;
     public TMP_Text scoreText;
     private int score = 0;
 
@@ -14,12 +15,8 @@ public class ScoreManager : MonoBehaviour
     public void scoreArtir()
     {
         score += 1;
-        scoreText.text = $"{score}";
+        scoreText.text = $"{score}";           
 
-    }
-
-
-
-
+    }   
 }
 
