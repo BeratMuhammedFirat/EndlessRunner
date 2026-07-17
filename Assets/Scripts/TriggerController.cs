@@ -6,7 +6,9 @@ public class TriggerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        manager.MoveTile();
-        
-    } 
+        if (other.CompareTag("Player"))
+        {
+            StartCoroutine(manager.MoveTile());
+        }
+    }
 }
