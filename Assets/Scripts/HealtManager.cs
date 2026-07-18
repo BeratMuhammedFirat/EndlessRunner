@@ -12,8 +12,7 @@ public class HealtManager : MonoBehaviour
     public int health = 3;
     void Start()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
-        
+        meshRenderer = GetComponent<MeshRenderer>();      
         
     }
 

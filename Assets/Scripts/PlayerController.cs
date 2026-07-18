@@ -85,4 +85,9 @@ public class PlayerController : MonoBehaviour
 
         isSliding = false;
     }
+
+    /*public void HizArtir ()
+    {
+        speed += 3f;
+    }*/
 }

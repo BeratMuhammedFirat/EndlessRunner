@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -3.66, y: -3.77, z: -12.47}
-  m_LocalScale: {x: 0.006832001, y: 0.970878, z: 0.97}
+  m_LocalScale: {x: 0.23, y: 0.970878, z: 0.97}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -112,8 +112,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 16.816593, y: 0.9412524, z: 0.98583066}
-  m_Center: {x: 1.2, y: 0.012324655, z: 0.0070816153}
+  m_Size: {x: 0.85556614, y: 0.9412524, z: 0.98583066}
+  m_Center: {x: -0.000516471, y: 0.012324671, z: 0.0070816153}
 --- !u!114 &486487673879825106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,5 +138,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcddec028d54e0c42ab98e4f72a9d7bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotateController
-  rotate: {x: 0, y: 100, z: 0}
-  "d\xF6necekTransform": []
+  rotateSpeed: 150
