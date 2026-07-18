@@ -17,12 +17,16 @@ public class PlayerController : MonoBehaviour
     private bool isSliding = false;
     private Vector3 normalScale;
 
+    private float startZ = 0f;
+    public float distance = 0f;
+
 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         normalScale = transform.localScale;
+        startZ = transform.position.z;
 
     }
 
@@ -66,7 +70,9 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S) && !isSliding)
         {
             StartCoroutine(Slide());
-        }       
+        }
+
+        distance =(-1)*(startZ - transform.position.z);
     }
     IEnumerator Slide()
     {
@@ -86,8 +92,7 @@ public class PlayerController : MonoBehaviour
         isSliding = false;
     }
 
-    /*public void HizArtir ()
-    {
-        speed += 3f;
-    }*/
+        
+
+   
 }
